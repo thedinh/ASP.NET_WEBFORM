@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="checkSession">
+        <s:complexType />
+      </s:element>
+      <s:element name="checkSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsNumeric">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsNumericResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsNumericResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayDuLieu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayDuLieuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayDuLieuResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuDanhMuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tendanhmuc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuDanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDuLieuDanhMucResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapNhatDuLieuDanhMuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="madanhmuc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tendanhmuc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapNhatDuLieuDanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CapNhatDuLieuDanhMucResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuBaiViet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tieude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tomtat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noidung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhthunho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chuthichhinh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="luotxem" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaydang" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="manguoidung" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="madanhmuc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuBaiVietResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDuLieuBaiVietResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapNhatDuLieuBaiViet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mabaiviet" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tieude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tomtat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noidung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhthunho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chuthichhinh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="luotxem" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaydang" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="manguoidung" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="madanhmuc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapNhatDuLieuBaiVietResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CapNhatDuLieuBaiVietResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuNguoiDung">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenNguoiDung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MatKhau" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HinhDaiDien" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NgaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SDT" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="VaiTro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuNguoiDungResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDuLieuNguoiDungResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapNhatDuLieuNguoiDung">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="manguoidung" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenNguoiDung" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MatKhau" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HinhDaiDien" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NgaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SDT" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:unsignedByte" />
+            <s:element minOccurs="1" maxOccurs="1" name="VaiTro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapNhatDuLieuNguoiDungResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CapNhatDuLieuNguoiDungResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuBinhLuan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noidung" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaydang" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="manguoidung" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mabaiviet" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuBinhLuanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDuLieuBinhLuanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapnhatDuLieuBinhLuan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mabinhluan" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="noidung" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="manguoidung" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mabaiviet" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapnhatDuLieuBinhLuanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CapnhatDuLieuBinhLuanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuFileUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenfile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chuthichfile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuFileUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDuLieuFileUploadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chuthichfile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytes" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="checkpath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkpathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkpathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuVaiTro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenvaitro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDuLieuVaiTroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDuLieuVaiTroResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapnhatDuLieuVaiTro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mavaitro" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenvaitro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapnhatDuLieuVaiTroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CapnhatDuLieuVaiTroResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaDuLieu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenbang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaDuLieuResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LayDanhSachBaiViet">
+        <s:complexType />
+      </s:element>
+      <s:element name="LayDanhSachBaiVietResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayDanhSachBaiVietResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayBaiVietMoiNhatTheoDanhMuc">
+        <s:complexType />
+      </s:element>
+      <s:element name="LayBaiVietMoiNhatTheoDanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayBaiVietMoiNhatTheoDanhMucResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayBaiVietLienQuan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MaDanhMuc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayBaiVietLienQuanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayBaiVietLienQuanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayNhungBaiVietMoiNhat">
+        <s:complexType />
+      </s:element>
+      <s:element name="LayNhungBaiVietMoiNhatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayNhungBaiVietMoiNhatResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayBinhLuan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mabaiviet" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayBinhLuanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayBinhLuanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authencation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MatKhau" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="VaiTro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthencationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthencationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBinhLuan">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadBinhLuanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBinhLuanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangKy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vaitro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DangKyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DangKyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadNguoiDung">
+        <s:complexType />
+      </s:element>
+      <s:element name="loadNguoiDungResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadNguoiDungResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDanhMuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Madanhmuc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadDanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadDanhMucResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="checkSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:checkSession" />
+  </wsdl:message>
+  <wsdl:message name="checkSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:checkSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsNumericSoapIn">
+    <wsdl:part name="parameters" element="tns:IsNumeric" />
+  </wsdl:message>
+  <wsdl:message name="IsNumericSoapOut">
+    <wsdl:part name="parameters" element="tns:IsNumericResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayDuLieuSoapIn">
+    <wsdl:part name="parameters" element="tns:LayDuLieu" />
+  </wsdl:message>
+  <wsdl:message name="LayDuLieuSoapOut">
+    <wsdl:part name="parameters" element="tns:LayDuLieuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuDanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuDanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuDanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuDanhMucResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapNhatDuLieuDanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:CapNhatDuLieuDanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="CapNhatDuLieuDanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:CapNhatDuLieuDanhMucResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuBaiVietSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuBaiViet" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuBaiVietSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuBaiVietResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapNhatDuLieuBaiVietSoapIn">
+    <wsdl:part name="parameters" element="tns:CapNhatDuLieuBaiViet" />
+  </wsdl:message>
+  <wsdl:message name="CapNhatDuLieuBaiVietSoapOut">
+    <wsdl:part name="parameters" element="tns:CapNhatDuLieuBaiVietResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuNguoiDungSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuNguoiDungSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapNhatDuLieuNguoiDungSoapIn">
+    <wsdl:part name="parameters" element="tns:CapNhatDuLieuNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="CapNhatDuLieuNguoiDungSoapOut">
+    <wsdl:part name="parameters" element="tns:CapNhatDuLieuNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuBinhLuanSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuBinhLuan" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuBinhLuanSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuBinhLuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapnhatDuLieuBinhLuanSoapIn">
+    <wsdl:part name="parameters" element="tns:CapnhatDuLieuBinhLuan" />
+  </wsdl:message>
+  <wsdl:message name="CapnhatDuLieuBinhLuanSoapOut">
+    <wsdl:part name="parameters" element="tns:CapnhatDuLieuBinhLuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuFileUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuFileUpload" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuFileUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuFileUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkpathSoapIn">
+    <wsdl:part name="parameters" element="tns:checkpath" />
+  </wsdl:message>
+  <wsdl:message name="checkpathSoapOut">
+    <wsdl:part name="parameters" element="tns:checkpathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuVaiTroSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuVaiTro" />
+  </wsdl:message>
+  <wsdl:message name="ThemDuLieuVaiTroSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDuLieuVaiTroResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapnhatDuLieuVaiTroSoapIn">
+    <wsdl:part name="parameters" element="tns:CapnhatDuLieuVaiTro" />
+  </wsdl:message>
+  <wsdl:message name="CapnhatDuLieuVaiTroSoapOut">
+    <wsdl:part name="parameters" element="tns:CapnhatDuLieuVaiTroResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaDuLieuSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaDuLieu" />
+  </wsdl:message>
+  <wsdl:message name="XoaDuLieuSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaDuLieuResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayDanhSachBaiVietSoapIn">
+    <wsdl:part name="parameters" element="tns:LayDanhSachBaiViet" />
+  </wsdl:message>
+  <wsdl:message name="LayDanhSachBaiVietSoapOut">
+    <wsdl:part name="parameters" element="tns:LayDanhSachBaiVietResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayBaiVietMoiNhatTheoDanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:LayBaiVietMoiNhatTheoDanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="LayBaiVietMoiNhatTheoDanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:LayBaiVietMoiNhatTheoDanhMucResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayBaiVietLienQuanSoapIn">
+    <wsdl:part name="parameters" element="tns:LayBaiVietLienQuan" />
+  </wsdl:message>
+  <wsdl:message name="LayBaiVietLienQuanSoapOut">
+    <wsdl:part name="parameters" element="tns:LayBaiVietLienQuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayNhungBaiVietMoiNhatSoapIn">
+    <wsdl:part name="parameters" element="tns:LayNhungBaiVietMoiNhat" />
+  </wsdl:message>
+  <wsdl:message name="LayNhungBaiVietMoiNhatSoapOut">
+    <wsdl:part name="parameters" element="tns:LayNhungBaiVietMoiNhatResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayBinhLuanSoapIn">
+    <wsdl:part name="parameters" element="tns:LayBinhLuan" />
+  </wsdl:message>
+  <wsdl:message name="LayBinhLuanSoapOut">
+    <wsdl:part name="parameters" element="tns:LayBinhLuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthencationSoapIn">
+    <wsdl:part name="parameters" element="tns:Authencation" />
+  </wsdl:message>
+  <wsdl:message name="AuthencationSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthencationResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadBinhLuanSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBinhLuan" />
+  </wsdl:message>
+  <wsdl:message name="LoadBinhLuanSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBinhLuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="DangKySoapIn">
+    <wsdl:part name="parameters" element="tns:DangKy" />
+  </wsdl:message>
+  <wsdl:message name="DangKySoapOut">
+    <wsdl:part name="parameters" element="tns:DangKyResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadNguoiDungSoapIn">
+    <wsdl:part name="parameters" element="tns:loadNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="loadNguoiDungSoapOut">
+    <wsdl:part name="parameters" element="tns:loadNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadDanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadDanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="LoadDanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadDanhMucResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="checkSession">
+      <wsdl:input message="tns:checkSessionSoapIn" />
+      <wsdl:output message="tns:checkSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsNumeric">
+      <wsdl:input message="tns:IsNumericSoapIn" />
+      <wsdl:output message="tns:IsNumericSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDuLieu">
+      <wsdl:input message="tns:LayDuLieuSoapIn" />
+      <wsdl:output message="tns:LayDuLieuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuDanhMuc">
+      <wsdl:input message="tns:ThemDuLieuDanhMucSoapIn" />
+      <wsdl:output message="tns:ThemDuLieuDanhMucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuDanhMuc">
+      <wsdl:input message="tns:CapNhatDuLieuDanhMucSoapIn" />
+      <wsdl:output message="tns:CapNhatDuLieuDanhMucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuBaiViet">
+      <wsdl:input message="tns:ThemDuLieuBaiVietSoapIn" />
+      <wsdl:output message="tns:ThemDuLieuBaiVietSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuBaiViet">
+      <wsdl:input message="tns:CapNhatDuLieuBaiVietSoapIn" />
+      <wsdl:output message="tns:CapNhatDuLieuBaiVietSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuNguoiDung">
+      <wsdl:input message="tns:ThemDuLieuNguoiDungSoapIn" />
+      <wsdl:output message="tns:ThemDuLieuNguoiDungSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuNguoiDung">
+      <wsdl:input message="tns:CapNhatDuLieuNguoiDungSoapIn" />
+      <wsdl:output message="tns:CapNhatDuLieuNguoiDungSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuBinhLuan">
+      <wsdl:input message="tns:ThemDuLieuBinhLuanSoapIn" />
+      <wsdl:output message="tns:ThemDuLieuBinhLuanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapnhatDuLieuBinhLuan">
+      <wsdl:input message="tns:CapnhatDuLieuBinhLuanSoapIn" />
+      <wsdl:output message="tns:CapnhatDuLieuBinhLuanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuFileUpload">
+      <wsdl:input message="tns:ThemDuLieuFileUploadSoapIn" />
+      <wsdl:output message="tns:ThemDuLieuFileUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkpath">
+      <wsdl:input message="tns:checkpathSoapIn" />
+      <wsdl:output message="tns:checkpathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuVaiTro">
+      <wsdl:input message="tns:ThemDuLieuVaiTroSoapIn" />
+      <wsdl:output message="tns:ThemDuLieuVaiTroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapnhatDuLieuVaiTro">
+      <wsdl:input message="tns:CapnhatDuLieuVaiTroSoapIn" />
+      <wsdl:output message="tns:CapnhatDuLieuVaiTroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaDuLieu">
+      <wsdl:input message="tns:XoaDuLieuSoapIn" />
+      <wsdl:output message="tns:XoaDuLieuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhSachBaiViet">
+      <wsdl:input message="tns:LayDanhSachBaiVietSoapIn" />
+      <wsdl:output message="tns:LayDanhSachBaiVietSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayBaiVietMoiNhatTheoDanhMuc">
+      <wsdl:input message="tns:LayBaiVietMoiNhatTheoDanhMucSoapIn" />
+      <wsdl:output message="tns:LayBaiVietMoiNhatTheoDanhMucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayBaiVietLienQuan">
+      <wsdl:input message="tns:LayBaiVietLienQuanSoapIn" />
+      <wsdl:output message="tns:LayBaiVietLienQuanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayNhungBaiVietMoiNhat">
+      <wsdl:input message="tns:LayNhungBaiVietMoiNhatSoapIn" />
+      <wsdl:output message="tns:LayNhungBaiVietMoiNhatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayBinhLuan">
+      <wsdl:input message="tns:LayBinhLuanSoapIn" />
+      <wsdl:output message="tns:LayBinhLuanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authencation">
+      <wsdl:input message="tns:AuthencationSoapIn" />
+      <wsdl:output message="tns:AuthencationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBinhLuan">
+      <wsdl:input message="tns:LoadBinhLuanSoapIn" />
+      <wsdl:output message="tns:LoadBinhLuanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DangKy">
+      <wsdl:input message="tns:DangKySoapIn" />
+      <wsdl:output message="tns:DangKySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadNguoiDung">
+      <wsdl:input message="tns:loadNguoiDungSoapIn" />
+      <wsdl:output message="tns:loadNguoiDungSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDanhMuc">
+      <wsdl:input message="tns:LoadDanhMucSoapIn" />
+      <wsdl:output message="tns:LoadDanhMucSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkSession">
+      <soap:operation soapAction="http://tempuri.org/checkSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumeric">
+      <soap:operation soapAction="http://tempuri.org/IsNumeric" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDuLieu">
+      <soap:operation soapAction="http://tempuri.org/LayDuLieu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuDanhMuc">
+      <soap:operation soapAction="http://tempuri.org/ThemDuLieuDanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuDanhMuc">
+      <soap:operation soapAction="http://tempuri.org/CapNhatDuLieuDanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuBaiViet">
+      <soap:operation soapAction="http://tempuri.org/ThemDuLieuBaiViet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuBaiViet">
+      <soap:operation soapAction="http://tempuri.org/CapNhatDuLieuBaiViet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/ThemDuLieuNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/CapNhatDuLieuNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuBinhLuan">
+      <soap:operation soapAction="http://tempuri.org/ThemDuLieuBinhLuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapnhatDuLieuBinhLuan">
+      <soap:operation soapAction="http://tempuri.org/CapnhatDuLieuBinhLuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuFileUpload">
+      <soap:operation soapAction="http://tempuri.org/ThemDuLieuFileUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkpath">
+      <soap:operation soapAction="http://tempuri.org/checkpath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuVaiTro">
+      <soap:operation soapAction="http://tempuri.org/ThemDuLieuVaiTro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapnhatDuLieuVaiTro">
+      <soap:operation soapAction="http://tempuri.org/CapnhatDuLieuVaiTro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaDuLieu">
+      <soap:operation soapAction="http://tempuri.org/XoaDuLieu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhSachBaiViet">
+      <soap:operation soapAction="http://tempuri.org/LayDanhSachBaiViet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayBaiVietMoiNhatTheoDanhMuc">
+      <soap:operation soapAction="http://tempuri.org/LayBaiVietMoiNhatTheoDanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayBaiVietLienQuan">
+      <soap:operation soapAction="http://tempuri.org/LayBaiVietLienQuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayNhungBaiVietMoiNhat">
+      <soap:operation soapAction="http://tempuri.org/LayNhungBaiVietMoiNhat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayBinhLuan">
+      <soap:operation soapAction="http://tempuri.org/LayBinhLuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authencation">
+      <soap:operation soapAction="http://tempuri.org/Authencation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBinhLuan">
+      <soap:operation soapAction="http://tempuri.org/LoadBinhLuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DangKy">
+      <soap:operation soapAction="http://tempuri.org/DangKy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/loadNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDanhMuc">
+      <soap:operation soapAction="http://tempuri.org/LoadDanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkSession">
+      <soap12:operation soapAction="http://tempuri.org/checkSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsNumeric">
+      <soap12:operation soapAction="http://tempuri.org/IsNumeric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDuLieu">
+      <soap12:operation soapAction="http://tempuri.org/LayDuLieu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuDanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/ThemDuLieuDanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuDanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/CapNhatDuLieuDanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuBaiViet">
+      <soap12:operation soapAction="http://tempuri.org/ThemDuLieuBaiViet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuBaiViet">
+      <soap12:operation soapAction="http://tempuri.org/CapNhatDuLieuBaiViet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuNguoiDung">
+      <soap12:operation soapAction="http://tempuri.org/ThemDuLieuNguoiDung" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatDuLieuNguoiDung">
+      <soap12:operation soapAction="http://tempuri.org/CapNhatDuLieuNguoiDung" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuBinhLuan">
+      <soap12:operation soapAction="http://tempuri.org/ThemDuLieuBinhLuan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapnhatDuLieuBinhLuan">
+      <soap12:operation soapAction="http://tempuri.org/CapnhatDuLieuBinhLuan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuFileUpload">
+      <soap12:operation soapAction="http://tempuri.org/ThemDuLieuFileUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkpath">
+      <soap12:operation soapAction="http://tempuri.org/checkpath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemDuLieuVaiTro">
+      <soap12:operation soapAction="http://tempuri.org/ThemDuLieuVaiTro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapnhatDuLieuVaiTro">
+      <soap12:operation soapAction="http://tempuri.org/CapnhatDuLieuVaiTro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaDuLieu">
+      <soap12:operation soapAction="http://tempuri.org/XoaDuLieu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayDanhSachBaiViet">
+      <soap12:operation soapAction="http://tempuri.org/LayDanhSachBaiViet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayBaiVietMoiNhatTheoDanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/LayBaiVietMoiNhatTheoDanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayBaiVietLienQuan">
+      <soap12:operation soapAction="http://tempuri.org/LayBaiVietLienQuan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayNhungBaiVietMoiNhat">
+      <soap12:operation soapAction="http://tempuri.org/LayNhungBaiVietMoiNhat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayBinhLuan">
+      <soap12:operation soapAction="http://tempuri.org/LayBinhLuan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authencation">
+      <soap12:operation soapAction="http://tempuri.org/Authencation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBinhLuan">
+      <soap12:operation soapAction="http://tempuri.org/LoadBinhLuan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DangKy">
+      <soap12:operation soapAction="http://tempuri.org/DangKy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadNguoiDung">
+      <soap12:operation soapAction="http://tempuri.org/loadNguoiDung" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/LoadDanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44324/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44324/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
