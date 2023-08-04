@@ -1,0 +1,71 @@
+-------- đặt mặc định lượt xem là 0 ---------
+ALTER TABLE BaiViet 
+ADD DEFAULT(0) FOR LuotXem
+---------store procedure cap nhat Nguoi Dung------------------
+CREATE PROCEDURE sp_updateNguoiDung @manguoidung int, @tennguoidung nvarchar(50),@email text,
+@matkhau nvarchar(50),@hinhdaidien text,@ngaysinh datetime,@diachi ntext,@sdt int,
+@gioitinh tinyint,@vaitro int
+AS
+begin
+	UPDATE NguoiDung SET TenNguoiDung = @tennguoidung,Email=@email,MatKhau = @matkhau,HinhDaiDien=@hinhdaidien,
+	NgaySinh = @ngaysinh,DiaChi = @diachi,SDT = @sdt,GioiTinh = @gioitinh,VaiTro = @vaitro where MaNguoiDung = @manguoidung
+end
+RETURN 0
+--------------store procedure thêm dữ liệu Bình luận------------------
+CREATE PROCEDURE sp_InsertBinhLuan @Noidung ntext,@ngaydang datetime,
+@manguoidung int, @mabaiviet int
+AS
+begin
+	insert into BinhLuan values(@Noidung,@ngaydang,@manguoidung,@mabaiviet)
+	end
+----store procedure Cập nhật dữ liệu nội dung Bình luận-----------------
+CREATE PROCEDURE sp_updateBinhLuan @mabinhluan int, @Noidung ntext,@ngaydang datetime,
+@manguoidung int, @mabaiviet int
+AS
+begin
+	update BinhLuan set NoiDung = @Noidung,NgayDang= @ngaydang,MaNguoiDung= @manguoidung,
+	MaBaiViet = @mabaiviet where MaBinhLuan = @mabinhluan
+	end
+-------------------Thêm file upload------------------------
+CREATE PROCEDURE sp_InsertFileUpload @tenfile text,@chuthichfile ntext
+AS
+begin
+	insert into FileUpLoads values(@tenfile,@chuthichfile)
+	end
+-------------------cập nhật file upload------------------------
+CREATE PROCEDURE sp_updateFileUpload @mafile int ,@tenfile text,@chuthichfile ntext
+AS
+begin
+	update FileUpLoads set TenFile = @tenfile,ChuThichFile= @chuthichfile where MaFile = @mafile
+	end
+-------------------Thêm vai trò------------------------
+CREATE PROCEDURE sp_InsertVaiTro @tenvaitro nvarchar(255)
+AS
+begin
+	insert into VaiTro values(@tenvaitro)
+	end
+-------------------cập nhật vai trò------------------------
+CREATE PROCEDURE sp_InsertVaiTro @tenvaitro nvarchar(255)
+AS
+begin
+	insert into VaiTro values(@tenvaitro)
+	end
+
+----------------Đổi kiểu dữ liệu cột Email--------------------------
+ALTER TABLE NguoiDung
+ALTER COLUMN Email varchar(255);
+----------------Đổi kiểu dữ liệu cột MK------------------------------
+ALTER TABLE NguoiDung
+ALTER COLUMN MatKhau varchar(255);
+--------Đổi kiểu dữ liệu cột Hinh Dai Dien---------------------------
+ALTER TABLE NguoiDung
+ALTER COLUMN HinhDaiDien varchar(255);
+------Đổi Email thành Unique---------
+ALTER TABLE NguoiDung
+ADD UNIQUE (Email);
+------Đổi MK thành Not Null---------
+ALTER TABLE NguoiDung
+alter column MatKhau varchar(255) Not Null 
+------Đổi tên người dùng thành Not Null---------
+ALTER TABLE NguoiDung
+alter column TenNguoiDung nvarchar(50) Not Null 
